@@ -1,0 +1,56 @@
+@import "reset";
+@import "bourbon/bourbon";
+body {
+  width: 100%;
+  background-color: #23719F;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-weight: 400;
+}
+a {
+  color: #ffffff;
+  cursor: pointer;
+  @include box-sizing(border-box);
+  padding: 0 10px;
+  border-radius: 3px;
+  @include background-image(linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.2)));
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(255,255,255,0.4);
+    background-image: none;
+  }
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 40px;
+  padding: 5px;
+  @include box-sizing(border-box);
+  a {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+.edit-popup-bg {
+  @include position(absolute, 0px 0px 0px 0px);
+  background-color: rgba(0,0,0,0.3);
+  .edit-popup {
+    width: 50%;
+    margin: 10% auto 0;
+    border-radius: 10px;
+    padding: 0px;
+    background-color: #eeeeee;
+    header {
+      color: #ffffff;
+      background-color: #1F658E;
+      padding: 10px;
+      border-radius: 10px 10px 0 0;
+      .close-btn {
+        float: right;
+      }
+    }
+    .content {
+      padding: 10px;
+    }
+  }
+}
