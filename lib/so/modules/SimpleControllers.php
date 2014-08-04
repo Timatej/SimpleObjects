@@ -47,6 +47,13 @@ class SimpleControllers
     public function save(){
         //getting raw post data.
         $data = file_get_contents('php://input');
-        $this->_so->save($data);
+        //saving data and getting inserted id or the existing one
+        $this->id = $this->_so->save($data);
+        //returning saved object for frontend sync
+        return $this->byId();
+    }
+
+    public function removeById(){
+        $this->_so->removeById($this->id);
     }
 }

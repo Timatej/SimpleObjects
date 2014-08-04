@@ -2,33 +2,32 @@
 <html>
 <head>
     <title>Exadel Summer Training</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body>
-<div ng-app="est">
-    <div ng-controller="studentsCtrl">
-        <header>
-            <nav>
-                <a ng-click="studentEdit('open')">Students</a>
-            </nav>
-        </header>
-
-        <div ng-show="editPopupOpened" class="edit-popup-bg">
-            <div class="edit-popup">
-                <header>
-                    <span>Edit Student Info</span>
-                    <a ng-click="studentEdit('close')" class="close-btn">X</a>
-                </header>
-                <div class="content">
-                    First Name: <input type="text" ng-model="user.firstname"><br>
-                    Second Name: <input type="text" ng-model="user.secondname"><br>
-                    <a ng-click="save()">Save</a>
-                </div>
-            </div>
+<body ng-app="est">
+<header class="navbar navbar-default">
+    <nav class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="#" class="navbar-brand">
+                <i class="fa fa-home"></i>
+            </a>
         </div>
-    </div>
-</div>
-<script src="js/angular.min.js"></script>
-<script src="js/main.js"></script>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#/tech">Technologies</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<ng-view></ng-view>
+
+<script src="built.js"></script>
 </body>
 </html>

@@ -1,6 +1,12 @@
-@import "reset";
+//@import "reset";
 @import "bourbon/bourbon";
-body {
+header nav {
+  i {
+    font-size: 25px;
+  }
+}
+
+/*body {
   width: 100%;
   background-color: #23719F;
   font-family: Verdana, Helvetica, sans-serif;
@@ -35,7 +41,7 @@ nav {
   @include position(absolute, 0px 0px 0px 0px);
   background-color: rgba(0,0,0,0.3);
   .edit-popup {
-    width: 50%;
+    max-width: 50%;
     margin: 10% auto 0;
     border-radius: 10px;
     padding: 0px;
@@ -45,12 +51,20 @@ nav {
       background-color: #1F658E;
       padding: 10px;
       border-radius: 10px 10px 0 0;
-      .close-btn {
+      i {
         float: right;
+        cursor: pointer;
+        display: block;
+        color: #eeeeee;
+        &:hover {
+          color: #ffffff;
+        }
       }
+
     }
     .content {
       padding: 10px;
     }
   }
 }
+*/

@@ -33,13 +33,22 @@ class SimpleObjects {
         $id = @$item->_id;
         unset($item->_id);
 
-        if (!empty($id) && strlen((string)$id) == 24) $id = new \MongoId($id);
+        if (!empty($id) && strlen((string)$id) == 24) {
+            $id = new \MongoId($id);
+            $this->_db->update(
+                array('_id' => $id),
+                $item
+            );
+        } else {
+            $this->_db->insert($item);
+            $id = (string)$item->_id;
+        }
 
-        $this->_db->update(
-            array('_id' => $id),
-            $item,
-            array("upsert" => true)
-        );
+        return $id;
+    }
+
+    public function removeById($id){
+        $this->_db->remove(array('_id' => new \MongoId($id)));
     }
 
     public function getCollection(){
